@@ -1,0 +1,130 @@
+/* Scheduling Styles */
+
+/* -------------------------- */
+/* Testimonials */
+/* -------------------------- */
+
+.dforce_schedule_fix {  /* --------- Scheduling Button --------- */
+	margin:28px 38px 0 0; 
+	float:right; 
+	z-index:999; 
+	@media screen and (max-width: $mobile-h) {
+		margin: 0 0 0 5%; 
+		float: left;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		margin: -($base*3.5) 5% 0 0; 
+	}
+}
+
+.dforce_schedule_fix p a { 
+	width:220px; 
+}
+
+table.rad { /* --------- Testimonials --------- */
+	width: 620px;
+	@include arial;
+	border: none !important;
+	td {
+		padding: 1.5em 0;
+		border-bottom: 1px dotted silver;
+	}
+	.radquote {
+		padding-bottom: 0.4em;
+		display: inline-block;
+	}
+	.starline {
+		padding-bottom: 0.2em;
+		display: inline-block;
+		.radstars {
+			font-size: 0.8em;
+			font-style: italic;
+		}
+	}
+	.radbylineby {
+		font-size: 0.8em;
+		font-style: italic;
+	}
+	.radbylineauthor {
+		font-weight: bold;
+	}
+	.radbylinedate {
+		font-size: 0.8em;
+		text-transform: uppercase;
+	}
+	@media screen and (max-width: $mobile-h) {
+		width: 90%;
+		margin-left: 5%;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 90%;
+		margin-left: 5%;
+	}
+}
+
+
+
+/* -------------------------- */
+/* Scheduling Form */
+/* -------------------------- */
+
+.rad_requestappt {
+	width: 620px;
+	@include arial;
+	border-top: 2px dotted silver;
+	padding-top:2em;
+	td {
+		padding-bottom:10px;
+	}
+	.AFRequiredIconStyle {
+		font: 0/0 a;
+		color: #fff;
+	}
+	input[type="text"], textarea { 
+		background-color: #f9f9f9; 
+		padding: 6px; 
+	}
+	input[type="text"], .af_inputText_content { 
+		border: 2px solid #bbb; 
+		&:focus { 
+			background-color: #fff; 
+			border: 2px solid $light-green; 
+		}
+	}
+	input[type="button"] {
+		width: 138px;
+		height: 38px;
+		background-color: #90c848;
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#90c848), to(#4d8528));
+		background-image: -webkit-linear-gradient(0% 100% 90deg, #4d8528, #90c848);
+		background-image: -moz-linear-gradient(0% 100% 90deg, #4d8528, #90c848);
+		background-image: -ms-linear-gradient(0% 100% 90deg, #4d8528, #90c848);
+		background-image: -o-linear-gradient(0% 100% 90deg, #4d8528, #90c848);
+		background-image: linear-gradient(0% 100% 90deg, #4d8528, #90c848);
+		color: #fff;
+		font-size: 1em;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 0 -1px 1px #000;
+		padding: 8px 0;
+		margin-left: 30px;
+		display: inline-block;
+		border: 1px solid #82b942;
+		@include border-radius($bx-radius);
+		@include box-shadow2(0px 2px 2px #222, inset 0px 0px 1px #73a532);
+		&:hover, &:focus { 
+			cursor: pointer;
+			background-color: #82b942;
+			background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#90c848), to(#82b942));
+			background-image: -webkit-linear-gradient(0% 100% 90deg, #82b942, #90c848);
+			background-image: -moz-linear-gradient(0% 100% 90deg, #82b942, #90c848);
+			background-image: -ms-linear-gradient(0% 100% 90deg, #82b942, #90c848);
+			background-image: -o-linear-gradient(0% 100% 90deg, #82b942, #90c848);
+			background-image: linear-gradient(0% 100% 90deg, #82b942, #90c848);
+			@include box-shadow2(0px 1px 1px #222, inset 0px 1px 2px #73a532)
+		}
+	}
+	@media screen and (max-width: $tablet-h) {
+		width: 100%;
+	}
+}

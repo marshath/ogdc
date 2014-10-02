@@ -1,0 +1,248 @@
+/* ------------------------------- */ 
+/* Flexslider Container */
+/* ------------------------------- */
+
+.flex-wrap {
+	width: 70%;
+	margin: 0 auto ($base*2);
+	@include box-shadow1(0px 0px 30px #aaa);
+	border:4px solid white; 
+	p {
+		font-size: $font12;
+		color: #777;
+		text-align: center;
+		margin-bottom: 0;
+	}
+	@media screen and (max-width: $mobile-h) {
+		width: 100%;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 90%;
+	}
+}
+
+
+
+/* Browser Resets */
+
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus {
+	outline: none;
+}
+
+.slides, .flex-control-nav, .flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+} 
+
+
+
+.flexslider { /* ---------- FlexSlider Necessary Styles ---------- */ 
+	margin: 0;
+	padding: 0;
+	.slides > li {
+		display: none;
+		-webkit-backface-visibility: hidden;
+	} /* Hide the slides before the JS is loaded. Avoids image jumping */
+	.slides img {
+		width: 100%;
+		height:100%;
+		display: block;
+	}
+}
+
+
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+
+
+
+.slides:after { /* Clearfix for the .slides element */
+	content: "."; 
+	display: block; 
+	clear: both; 
+	visibility: hidden; 
+	line-height: 0; 
+	height: 0;
+}
+
+html[xmlns] .slides {
+	display: block;
+} 
+
+* html .slides {
+	height: 1%;
+}
+
+
+/* ---------- No JavaScript Fallback ---------- */
+/* If you are not using another script, such as Modernizr, make sure you include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+	display: block;
+}
+
+
+
+.flexslider {  /* ---------- FlexSlider Default Theme ---------- */
+	margin: 0 0 0; 
+	position:relative; 
+	zoom: 1; 
+}
+
+.flex-viewport {
+	-webkit-transition: all 1s ease; 
+	-moz-transition: all 1s ease; 
+	transition: all 1s ease;
+}
+
+.loading .flex-viewport {
+	max-height: 310px;
+}
+
+.flexslider .slides {
+	zoom: 1; 
+}
+
+.carousel li {
+	margin-right: 5px
+}
+
+
+
+.flex-direction-nav { /* ---------- Direction Nav ---------- */
+	*height: 0; 
+}
+
+.flex-direction-nav a {
+	width: 70px; 
+	height: 50px; 
+	margin: -25px 0 0; 
+	display: block; 
+	background: url(images/bg_direction_nav2.png) no-repeat 0 0 white; 
+	position: absolute; 
+	top: 50%; 
+	z-index: 10; 
+	cursor: pointer; 
+	text-indent: -9999px; 
+	@include border-radius(0.4em);
+	opacity: 0;
+	@include transition(all 0.16s linear); 
+}
+
+body.page-id-9 .flex-direction-nav a {
+	top: 40%;
+}
+
+.flex-direction-nav .flex-next {
+	background-position: -98px 50%; 
+	right: -36px; 
+}
+
+.flex-direction-nav .flex-prev {
+	background-position: 40px 50%; 
+	left: -36px;
+}
+
+.flexslider:hover .flex-next {
+	opacity: 0.75; 
+	right: -28px;
+}
+
+.flexslider:hover .flex-prev {
+	opacity: 0.75; 
+	left: -28px;
+}
+
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
+	opacity: 1;
+}
+
+.flex-direction-nav .flex-disabled {
+	opacity: .3!important; 
+	filter:alpha(opacity=30); 
+	cursor: default;
+}
+
+
+
+.flex-control-nav { /* --------- Control Nav --------- */
+	width: 100%; 
+	position: absolute; 
+	bottom: 6px; 
+	text-align: center;
+}
+
+.flex-control-nav li {
+	margin: 0 6px;
+	display: inline-block; 
+	zoom: 1; 
+	*display: inline;
+}
+
+.flex-control-paging li a {
+	width: 11px; 
+	height: 11px; 
+	@include border-radius($bx-corner);
+	display: block; 
+	background: rgba(0,0,0,0.3); 
+	border: 1px solid rgba(255,255,255,0.8);
+	cursor: pointer; 
+	text-indent: -9999px;
+}
+
+.flex-control-paging li a:hover { 
+	background: #333; 
+	background: lighten($light-green, 32%); 
+}
+
+.flex-control-paging li a.flex-active { 
+	background: #000; 
+	background: $light-green; 
+	cursor: default; 
+}
+
+.flex-control-thumbs {
+	margin: 5px 0 0; 
+	position: static; 
+	overflow: hidden;
+}
+
+.flex-control-thumbs li {
+	width: 20%; 
+	float: left; 
+	box-sizing: border-box;
+	border: 2px solid white;
+	margin: 0;
+}
+
+.flex-control-thumbs img {
+	width: 100%; 
+	display: block; 
+	opacity: .7; 
+	cursor: pointer;
+}
+
+.flex-control-thumbs img:hover {
+	opacity: 1;
+}
+
+.flex-control-thumbs .flex-active {
+	opacity: 1; 
+	cursor: default;
+}
+
+@media screen and (max-width: $tablet-h) {
+  .flex-direction-nav .flex-prev {
+	  opacity: 0.5; 
+	  left: -25px;
+	  display: none;
+  }
+  
+  .flex-direction-nav .flex-next {
+	  opacity: 0.5; 
+	  right:  -25px;
+	  display: none;
+  }
+  
+}

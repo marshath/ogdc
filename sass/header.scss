@@ -1,0 +1,283 @@
+/* Header Styles */
+
+/* -------------------------- */
+/* Header */
+/* -------------------------- */
+
+.leaf { 
+	width: 380px; 
+	height: 202px;
+	background: url($sprite) -530px 0px;
+	position: absolute; 
+	left: -5.5em; 
+	z-index: 1; 
+	@media screen and (max-width: $mobile-h) {
+		display: none;
+	}
+}
+
+@-webkit-keyframes appointment { 0% { opacity:0; } 100% { opacity:1; } }  /* --------- Schedule Icon --------- */
+@-webkit-keyframes appointment2 { 0% { opacity:0; } 50% { opacity:1; } 100% { opacity:0; } }
+
+body.home .schedule_app {
+	-webkit-animation:appointment 2s 1 alternate linear; 
+	span { 
+		-webkit-animation:appointment2 0.7s 2.5s 4 alternate ease-in; 
+	}
+}
+
+.schedule_app { 
+	width: 7.5em; 
+	height: ($base*6.5); 
+	background: url($head) -300px -6px ;
+	text-indent: -9999px; 
+	margin: ($base*2) 4em 0 0; 
+	display: inline-block; 
+	box-sizing: border-box;
+	border: 1px solid lighten($tan,4%);
+	box-shadow: inset 0px -2px 10px darken($tan,10%);
+	@include border-radius($bx-corner);
+	position: relative; 
+	float: right;
+	&:hover {
+		background-color: darken($tan,2%); 
+	}
+	span { 
+		background: url($head) -423px -6px; 
+		position: absolute; 
+		top: 0; 
+		left: 0; 
+		bottom: 0; 
+		right: 0; 
+		opacity: 0; 
+		@include transition(opacity 0.1s ease-in); 
+	}
+	&:hover span { 
+		opacity: 1; 
+	}
+	@media screen and (max-width: $mobile-h) {
+		margin: ($base*3.5) 5% 0 0; 
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		margin: ($base*2) 5% 0 0; 
+	}
+}
+
+.top_container {
+	position: relative;
+	.office_info { 
+		font-size: 0.85em; 
+		color: #554; 
+		line-height: 1.5em; 
+		text-align: center;
+		margin: ($base*4) 7% ($base/2); 
+		float: right;
+		@media screen and (max-width: $mobile-h) {
+			width: 100%;
+			height: ($base*3.5);
+			background: darken($dark-green,5%);
+			color: white;
+			text-align: center;
+			margin: 0;
+			padding: ($base/2) 1em;
+			box-sizing: border-box;
+			position: absolute;
+			top: 0;
+			left:0;
+			@include box-shadow1($bx-shad3);
+			h3 {
+				text-align: center;
+				text-shadow: 1px 1px 0px black;
+			}
+		}
+		@media screen and (max-width: $tablet-h) {
+			margin-right: 3%; 
+		}
+	}
+	.dentist_name { 
+		font-size: 1.6em; 
+		font-weight: bold; 
+		@media screen and (max-width: $mobile-h) {
+			font-size: 1.4em;
+		}
+	}
+}
+
+
+
+/* -------------------------- */
+/* Navigation */
+/* -------------------------- */
+
+.top_nav { 
+	width: 960px;
+	height: 46px;
+	background: #696564; 
+	@include bg-gradient2(#807e7b, #696564); 
+	@include oswald; 
+	font-weight: 400; 
+	font-size: 1.16em; 
+	margin: 0 auto 1px; 
+	display: block;
+	border-bottom: 1px solid #807e7b; 
+	@include border-radius-btm-left($bx-radius); 
+	@include border-radius-btm-right($bx-radius); 
+	@include box-shadow3(0px 2px 4px #333, inset 0px 2px 8px #333, inset 0px -2px 4px rgba(255, 255, 255, 0.4));
+	.primary ul { 
+		padding-left: 0.75em;
+	}
+	.social ul { 
+		margin-left: 862px;
+	}
+	.primary li, .primary a, .social li, .social a {
+		height:34px;
+		color: #fff; 
+		display: block; 
+		float: left; 
+	}
+	.primary a { 
+		padding: ($base*0.66) 1.125em 0; 
+		text-shadow: 0 -1px 0 #000; 
+		@include transition(background-color 0.2s ease-in-out);
+		&:hover { 
+			background: rgba(40, 40, 40, 0.1); 
+			color: lighten($light-green,25%);
+		}
+	}
+	.primary .current_page_item a { 
+		background: rgba(40, 40, 40, 0.3); 
+		box-shadow: inset 0px 2px 4px darken($og-gray,20%);
+	}
+	.primary .page-item-2 a, .primary .nav_home a, .social a { 
+		text-indent: -9999px;
+	}
+	@media screen and (max-width: $tablet-h) {
+		width: 100%;
+		@include border-radius-btm-left(0); 
+		@include border-radius-btm-right(0);
+		.primary ul { 
+			width: 100%;
+			padding-left: 0;
+		}
+		.primary li { 
+			width: 25%;
+			height: ($base*2.25);
+			text-align: center;
+			box-sizing: border-box;
+			border-top: 1px solid $og-gray;
+			border-left: 1px solid $og-gray;
+		}
+		.primary a {
+			width: 100%;
+			height: ($base*1.65);
+			padding: ($base/1.75) 0 0; 
+		}
+		.primary .page-item-2 a, .primary .nav_home a, .social a { 
+			width: 100%;
+			text-indent: 0px;
+		}
+	}
+	@media screen and (max-width: $mobile-h) {
+		height: auto;
+		max-height: 230px;
+		.primary li { 
+			width: 50%;
+		}
+		#nav-menu {
+			display: none;
+		}
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		height: ($base*4.5);
+		.primary li { 
+			width: 25%;
+		}
+	}
+}
+
+.nav_icon { 
+	padding-top: 15px;
+}
+
+.primary .page-item-2 a { 
+	width: 20px;
+	background: transparent url($sprite) 20px -168px no-repeat;
+	&:hover, &:active { 
+		background: transparent url($sprite) -59px -168px no-repeat; 
+	}
+	@media screen and (max-width: $tablet-h) {
+		background: none; 
+		&:hover, &:active { 
+			background: none; 
+		}
+	}
+}
+
+body.page-id-2 .top_nav .primary .current_page_item a { 
+	background: rgba(40, 40, 40, 0.3) url($sprite) 20px -168px no-repeat; 
+	&:hover, &:active { 
+		background: rgba(40, 40, 40, 0.3) url($sprite) -59px -168px no-repeat; 
+	}
+	@media screen and (max-width: $tablet-h) {
+		background: rgba(40, 40, 40, 0.3); 
+		&:hover, &:active { 
+			background: rgba(40, 40, 40, 0.3); 
+		}
+	}
+}
+
+
+
+h3#menu-toggle { /* --------- Toggle Menu Button --------- */
+	display: none;
+	@media screen and (max-width: $mobile-h) {
+		width: 100%;
+		height: ($base*1.5);
+		text-align: center;
+		display: block;
+		a {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	}
+}
+
+
+
+.top_nav .social a {  /* --------- Social Icons --------- */
+	width: 26px;
+}
+
+.top_nav .social {
+	.facebook { 
+		left: 0px;
+		a { 
+			background: url($sprite) 2px -144px no-repeat;
+			&:hover { 
+				background: url($sprite) -76px -144px no-repeat;
+			}
+		}
+	}
+	.twitter { 
+		left: 26px;
+		a { 
+			background: url($sprite) -24px -144px no-repeat;
+			&:hover { 
+				background: url($sprite) -102px -144px no-repeat;
+			}
+		}
+	}
+	.google { 
+		left: 52px;
+		a { 
+			background: url($sprite) -50px -144px no-repeat;
+			&:hover { 
+				background: url($sprite) -128px -144px no-repeat;
+			}
+		}
+	}
+	@media screen and (max-width: $tablet-h) {
+		display: none;
+	}
+}

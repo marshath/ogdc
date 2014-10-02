@@ -1,0 +1,83 @@
+/* Sidebar Styles */
+
+/* -------------------------- */
+/* Sidebars */
+/* -------------------------- */
+
+div.sidebar { 
+	width: 280px; 
+	background-color: $tan; 
+	color: $side-txt; 
+	padding: 5px; 
+	display: block; 
+	position: relative; 
+	float: right;
+	&:after { 
+		content: ""; 
+		width: 300px; 
+		height: 16px; 
+		background: url($sprite) -227px -151px no-repeat; 
+		margin: 5px 0 0 -2px; 
+		display: block; 
+		position: absolute; 
+	}
+	.callout { 
+		padding: 10px; 
+		border: 1px solid darken($tan, 20%); 
+		@include box-shadow2(1px 1px 0px #fff, inset 1px 1px 0px #fff); 
+	}
+	@media screen and (max-width: $tablet-h) {
+		width:90%;
+		box-sizing: border-box;
+		box-shadow: 0 5px 4px lighten($og-gray,20%);
+		margin: ($base*2.5) 5% 0;
+		&:after {
+			display: none;
+		} 
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		ul.team li, ul.pdf li {
+			width: 48%;
+			float: left;
+			margin: 1%;
+			
+		}
+		ul.appointment li {
+			width: 16rem;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+
+
+.tooth, .q-mark, .star {  /* --------- Sidebar Icons --------- */
+	width: 42px; 
+	height: 42px; 
+	margin: 10px auto 6px; 
+}
+
+.tooth { 
+	background: url($sprite) -254px -6px no-repeat; 
+}
+
+.q-mark { 
+	background: url($sprite) -254px -50px no-repeat; 
+}
+
+.star { 
+	background: url($sprite) -254px -94px no-repeat; 
+}
+
+.dots { 
+	width: 85px; 
+	height: 7px; 
+	background: url($sprite) -327px -190px no-repeat; 
+	margin: 6px auto 12px; 
+}
+
+.callout img { 
+	margin-right: 10px; 
+	border: 1px solid darken($tan, 20%); 
+}

@@ -1,0 +1,309 @@
+/* Footer Styles */
+
+/* -------------------------- */
+/* Footer */
+/* -------------------------- */
+
+footer section {
+	width: 23%;
+	margin: 0 1%;
+	float: left;
+	@media screen and (max-width: $mobile-h) {
+		width: 96%;
+		margin: 0 2% ($base*1.5);
+		&:nth-child(2) {
+			display: none;
+		}
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 46%;
+		margin: 0 2% ($base*1.5);
+		&:nth-child(2) {
+			display: none;
+		}
+		&:nth-child(4) {
+			width: 95%;
+		}
+	}
+}
+
+div.btm_container .office_info p {  /* --------- Office Info --------- */
+	font-size: $font12;
+	line-height: 1.4em;
+	text-align: center;
+	margin-bottom: ($base/2);
+	.dentist_name {
+		font-size: 14px;
+	}
+	@media screen and (max-width: $tablet-h) {
+		font-size:$font13;
+		margin-bottom: ($base);
+	}
+}
+
+div.map {  /* --------- Street View Buttons --------- */
+	width: 220px;
+	height: 178px;
+	position: relative;
+	display: block;
+	@media screen and (max-width: $tablet-h) {
+		margin: 0 auto;
+	}
+}
+
+section.location img { 
+	@include border-radius($bx-corner); 
+	@include box-shadow1(0px 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+div.map_btns { 
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	ul { 
+		width: 100%; 
+	}
+	li, a {
+		width: 109px; 
+		height: 20px; 
+		background: darken($btm-nav, 100%); 
+		color: #fff; 
+		list-style: none; 
+		text-shadow: 0px -1px 0px #000; 
+		float: left;
+	}
+	li { 
+		border-bottom: 1px solid #fff; 
+		font-size: 0.70em; 
+		text-align: center;
+	}
+	a {
+		&:hover { 
+			background: #333; 
+		}
+	}
+}
+
+.map_btns li {
+	&:first-child {
+		border-right: 1px solid #fff; 
+		@include border-radius-top-left($bx-corner);
+	}
+	&:last-child { 
+		border-left: 1px solid #555; 
+		@include border-radius-top-right($bx-corner);
+	}
+	a.enlarge { 
+		@include border-radius-top-left($bx-corner);
+	}
+	a.street { 
+		@include border-radius-top-right($bx-corner);
+	}
+}
+
+
+nav.secondary {  /* --------- Navigation Bottom --------- */
+	width: 230px;
+	font-weight: bold;
+	box-sizing: border-box;
+	margin-left: -($base*0.5);
+	@media screen and (max-width: $mobile-h) {
+		width: 100%;
+		margin-left: 0;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+section.btm_navigation nav {
+	ul {
+		width: 100%; 
+	}
+	li, a {
+		width: 105px;
+		color: #fff;
+		text-align: center;
+		display: block;
+	}
+	li {
+		font-size: 0.82em;
+		line-height: 1; 
+		list-style: none; 
+		margin: 0 0 ($base/2) 0.8em; 
+		display: inline-block;
+		float: left; 
+		&:last-child {
+			width:96%;
+		}
+	}
+	a { 
+		background: darken($btm-nav, 50%);
+		padding: ($base*0.75) 0; 
+		@include transition(background 0.16s linear);
+		&:hover { 
+			background: $btm-nav; 
+		}
+		&:active, div#map_btns a:active { 
+			background: saturate($btm-nav, 40%); 
+		}
+		&:last-child {
+			width:100%;
+		}
+	}
+	@media screen and  (max-width: $tablet-h) {
+		li {
+			width: 46.5%;
+			&:last-child {
+				width:96%;
+			}
+		}
+		a {
+			width: 100%;
+			padding: $base 0;
+		}
+	}
+	@media screen and  (max-width: $mobile-h) {
+		li:last-child {
+			width:95%;
+		}
+	}
+}
+
+section.social_btns nav {  /* --------- Footer Social Buttons --------- */
+	ul {
+		width: 100%; 
+	}
+	li {
+		list-style: none; 
+		margin-bottom: ($base*0.7); 
+		overflow: hidden; 
+	}
+	a { 
+		width: 100%; 
+		height: ($base*1.75); 
+		@include oswald; 
+		color: #fff; 
+		font-weight: 400; 
+		font-size: 1.15em; 
+		text-align: center; 
+		text-shadow: 0 -1px 1px black; 
+		display: block; 
+	}
+	.facebook { 
+		@include bg-gradient2(#1d4058, #0b2231); 
+	}
+	.twitter { 
+		@include bg-gradient2(#265f7f, #0e3043); 
+	}
+	.google { 
+		@include bg-gradient2(#772626, #380c0c); 
+	}
+	.facebook, .twitter, .google { 
+		@include border-radius(8px);
+		@include box-shadow3(0px 2px 2px #111, inset 0px 2px 4px rgba(255, 255, 255, 0.2), inset 0px -2px 4px rgba(0, 0, 0, 0.6));
+		position: relative;
+		z-index: 1;
+		border: 1px solid #333;
+		-khtml-opacity: 1;
+		-moz-opacity: 1;
+		-ms-filter: "alpha(opacity=100)";
+		filter: alpha(opacity=100);
+		filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1);
+		opacity: 1;
+		&:hover {
+			-khtml-opacity: 0.80;
+			-moz-opacity: 0.80;
+			-ms-filter: "alpha(opacity=80)";
+			filter: alpha(opacity=80);
+			filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.8);
+			opacity: 0.80;
+			overflow: hidden;
+		}
+	}
+	@media screen and (max-width: $tablet-h) {
+		li {
+			width: 29%;
+			float: left;
+			margin: 0 2%;
+		}
+	}
+	@media screen and (max-width: $mobile-h) {
+		li {
+			width: 28%;
+		}
+	}
+}
+
+section.social_btns li {
+	&.facebook a {
+		width: 100%;
+		background: url($head) 172px 0px no-repeat;
+		padding-top: 14px;
+		display: block;
+	}
+	&.twitter a {
+		width: 100%;
+		background: url($head) 172px -54px no-repeat;
+		padding-top: 14px;
+		display: block;
+	}
+	&.google a {
+		width: 100%;
+		background: url($head) 172px -108px no-repeat;
+		padding-top: 14px;
+		display: block;
+	}
+	@media screen and (max-width: $tablet-h) {
+		&.facebook a, &.twitter a, &.google a {
+			background:none;
+		}
+	}
+}
+
+.social_paddin {
+	padding: 14px 0 0 24px;
+	display: inline-block;
+	float: left;
+}
+
+.social_padding {
+	width: 180px; 
+	display: inline-block; 
+	float: left; 
+	@media screen and (max-width: $tablet-h) {
+		width: 100%;
+	}
+}
+
+
+
+/* -------------------------- */
+/* Copyright */
+/* -------------------------- */
+
+div.copyright { 
+	font-size: 0.8em; 
+	text-align: center; 
+	line-height: 1; 
+	padding-top: 30px;
+	display: block; 
+	clear: both; 
+	p.mm {  /* --------- 33 Degrees Logo Link --------- */
+		color: #777;
+		margin-top: -26px; 
+		float: right;
+		a {
+			color: #999;
+			&:hover {
+				color: #e65127;
+			}
+		}
+		@media screen and (max-width: $tablet-h) {
+			margin: 0 auto;
+			width: 100%;
+			float: left;
+		}
+	}
+}

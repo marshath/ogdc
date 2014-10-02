@@ -1,0 +1,238 @@
+/* Typography Styles */
+
+/* -------------------------- */
+/* Heading Fonts */
+/* -------------------------- */
+
+h1 a { 
+	width: 200px; 
+	height: 155px; 
+	background: url($head) -61px 0px no-repeat;
+	text-indent: -9999px;
+	margin: $base 0 0 5%; 
+	display: block; 
+	float: left; 
+	position: absolute; 
+	z-index: 100; 
+	@media screen and (max-width: $mobile-h) {
+		margin-top: ($base*2.5);
+		margin-left: 0;
+		@include scale(0.75);
+	}
+	@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+		background: url(images/logo-ogdc@2x.png) no-repeat;
+		background-size: cover;
+	}
+}
+
+h2 { 
+	@include garamond; 
+	font-size: 2.6em; 
+	line-height: 1;
+	color: #3d3a38; 
+	margin: 60px 0 30px; 
+	@media screen and (max-width: $tablet-h) {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+}
+
+body.page-id-11 h2 { 
+	margin-top: 0; 
+	@media screen and (max-width: $tablet-h) {
+		margin-left: 0;
+	}
+}
+
+.home-featured h2 { 
+	width: 100%;
+	font-size: 2.2em;
+	padding-bottom: 14px; 
+	margin: 0 0 16px; 
+	border-bottom: 1px solid #ccc; 
+}
+
+div.team {
+	h3 { 
+		font-size: 1.8em; 
+		margin: -8px 10px 10px 0; 
+	}
+	h4 { 
+		font-size: 0.9em; 
+		font-weight: bold; 
+		text-transform: uppercase; 
+		margin-bottom: 6px; 
+	}
+}
+
+div.btm_container {
+	h3 a { 
+		width: 118px; 
+		height: 92px;
+		background: url($sprite) 0px 0px no-repeat; 
+		text-indent: -9999px;
+		margin: 0 auto 12px; 
+		display: block;
+	}
+	
+	h4 { 
+		font-size: 0.85em; 
+		text-align: center; 
+		text-transform: uppercase; 
+		margin-bottom: 6px; 
+	}
+}
+
+div.sidebar h4 { 
+	font-size: 1.15em; 
+	font-weight: bold; 
+	text-align: center; 
+}
+
+h5 { 
+	font-size: 0.8em; 
+	font-weight: bold; 
+}
+
+p { 
+	margin-bottom: 16px; 
+	&.coming-soon {
+		min-height: 400px;
+		@media screen and (max-width: $tablet-h) {
+			min-height: ($base*8);
+		}
+	}
+}
+
+div.cerec p { 
+	font-size: 0.86em; 
+}
+
+.d3cp_input_outer p { 
+	height: 0px;
+	text-indent: -9999px;
+	margin: 0; 
+}
+
+b { 
+	font-weight: bold; 
+}
+
+i { 
+	font-style: italic; 
+}
+
+.small { 
+	font-size: 0.8em; 
+	font-weight: normal; 
+}
+
+.small-caps { 
+	font-size: 0.8em; 
+	font-weight: normal; 
+	text-transform: uppercase;
+}
+
+.quote { 
+	font-size: 0.9em; 
+}
+
+.super { 
+	font-size: xx-small; 
+	vertical-align: top; 
+}
+
+.green { 
+	color: $dark-green; 
+}
+
+@media screen and (max-width: $mobile-h) {
+	.mobile-no {
+		display: none;
+	}
+}
+
+::selection { background: lighten($light-green,35%);	}
+::-moz-selection { background: lighten($light-green,35%); }
+
+
+
+/* -------------------------- */
+/* Links */
+/* -------------------------- */
+
+a { 
+	text-decoration: none; 
+	color: $dark-green; 
+	&.jump:link, &.jump:visited { 
+		width: 23%; 
+		background-color: $tan; 
+		font-size: 0.8em; 
+		color: $og-gray; 
+		text-shadow: 0px 1px #fff; 
+		margin: 0.5%; 
+		padding: 2px 0 2px 4px; 
+		display: block; 
+		float: left; 
+		box-sizing: border-box;
+		@include transition(background 0.16s linear); 
+		@media screen and (max-width: $mobile-h) {
+			width: 49%;
+			font-size:$font14;
+			padding: 4%;
+		}
+		@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+			padding: 2% 0 2% 2%;
+			width: 24%;
+			font-size:$font14;
+		}
+	}
+	&.jump:hover { 
+		background-color: darken($tan, 10%); 
+		color: black; 
+	}
+}
+
+.jumpNav {
+	width: 630px;
+	@media screen and (max-width: $tablet-h) {
+		width: 100%;
+	}
+}
+
+section.services a.jump:link {
+	width: 46%;
+	@media screen and (max-width: $mobile-h) {
+		width: 49%;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 24%;
+	}
+}
+
+.jumpLink { 
+	width: 24%; 
+	text-align: center; 
+	float: right; 
+	.small a { 
+		color: #666; 
+	}
+}
+
+.callout a {  /* --------- Sidebar Links --------- */
+	&:link, &:visited {
+		height: 52px; 
+		background-color: darken($tan, 6%); 
+		font-size: 1.1em; 
+		color: $side-txt; 
+		text-shadow: 0px 1px 0px #fff; 
+		padding: 6px; 
+		display: block; 
+		@include border-radius($bx-corner); 
+		@include transition(background 0.16s linear); 
+	}
+	&:hover { 
+		background-color: darken($tan, 10%); 
+	}
+}
